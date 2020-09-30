@@ -1,24 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SportActivity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAk-hu-cue">
+                                <rect key="frame" x="171" y="411" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Map detail"/>
+                                <connections>
+                                    <segue destination="IFZ-ih-XWP" kind="show" id="1hG-lP-Eo6"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="mapDatailButton" destination="rAk-hu-cue" id="7XY-kp-Ua8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="59" y="94"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YOl-fu-WZH">
+            <objects>
+                <navigationController modalPresentationStyle="fullScreen" id="IFZ-ih-XWP" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="HIz-XF-sfN"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="e5u-q2-xVy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Iy3-Pb-1Wb">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="J9g-HH-aqt" kind="relationship" relationship="rootViewController" id="4e6-9A-dT2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yvR-Q4-45N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="764" y="102"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Ls3-f1-CGv">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="J9g-HH-aqt" customClass="MapViewController" customModule="SportActivity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Drp-Rx-DhZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hwO-dS-Ipx" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pS4-gM-zih">
+                                <rect key="frame" x="20" y="802" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="K2A-zG-enz"/>
+                                    <constraint firstAttribute="width" secondItem="pS4-gM-zih" secondAttribute="height" multiplier="1:1" id="jk2-Uo-hkr"/>
+                                </constraints>
+                                <state key="normal">
+                                    <imageReference key="image" image="location.circle.fill" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="setPositionButton:" destination="J9g-HH-aqt" eventType="touchUpInside" id="G3x-cQ-nap"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ibh-tY-IpY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pS4-gM-zih" firstAttribute="leading" secondItem="ibh-tY-IpY" secondAttribute="leading" constant="20" id="Fg6-9n-GP9"/>
+                            <constraint firstItem="hwO-dS-Ipx" firstAttribute="leading" secondItem="ibh-tY-IpY" secondAttribute="leading" id="cj8-N2-ere"/>
+                            <constraint firstItem="ibh-tY-IpY" firstAttribute="trailing" secondItem="hwO-dS-Ipx" secondAttribute="trailing" id="cnp-2e-td0"/>
+                            <constraint firstItem="hwO-dS-Ipx" firstAttribute="top" secondItem="ibh-tY-IpY" secondAttribute="top" id="fma-V4-c1g"/>
+                            <constraint firstItem="ibh-tY-IpY" firstAttribute="bottom" secondItem="pS4-gM-zih" secondAttribute="bottom" constant="20" id="qyx-bu-c2Q"/>
+                            <constraint firstItem="ibh-tY-IpY" firstAttribute="bottom" secondItem="hwO-dS-Ipx" secondAttribute="bottom" id="uHS-NO-1U1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="g73-2a-ipf">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="6EM-8j-gw3">
+                            <connections>
+                                <action selector="backButton:" destination="J9g-HH-aqt" id="fhp-IT-8eF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Home" image="location" catalog="system" id="XeI-ty-Qb7">
+                            <connections>
+                                <action selector="homeButton:" destination="J9g-HH-aqt" id="Nj9-3b-m98"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="mapView" destination="hwO-dS-Ipx" id="SKp-9C-N6n"/>
+                        <segue destination="v01-ft-dO2" kind="unwind" identifier="goToStart" unwindAction="unwind:" id="LTb-uv-p8X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r9n-Eq-yNG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="v01-ft-dO2" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1528" y="102"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="location" catalog="system" width="128" height="121"/>
+        <image name="location.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
