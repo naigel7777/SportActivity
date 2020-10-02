@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1EE62A28F4BF27F0F46B2DCA /* Pods_SportActivity_SportActivityUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D7B38BDF68494BED051ECD /* Pods_SportActivity_SportActivityUITests.framework */; };
 		8543AC3E25222CE3007DAEB3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543AC3D25222CE3007DAEB3 /* MapViewController.swift */; };
+		8543AC6525264714007DAEB3 /* LocationRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543AC6425264714007DAEB3 /* LocationRealmModel.swift */; };
+		8543AC6B25264872007DAEB3 /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543AC6A25264872007DAEB3 /* LocationRepository.swift */; };
+		8543AC702527507C007DAEB3 /* RouteStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543AC6F2527507C007DAEB3 /* RouteStatus.swift */; };
 		85DED1E42522200F0088039F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DED1E32522200F0088039F /* AppDelegate.swift */; };
 		85DED1E62522200F0088039F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DED1E52522200F0088039F /* SceneDelegate.swift */; };
 		85DED1E82522200F0088039F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DED1E72522200F0088039F /* ViewController.swift */; };
@@ -44,6 +47,9 @@
 		50E918A0A2F1CFB6F1CF336A /* Pods-SportActivity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportActivity.release.xcconfig"; path = "Target Support Files/Pods-SportActivity/Pods-SportActivity.release.xcconfig"; sourceTree = "<group>"; };
 		5B1DF76FB0F221BBCF6083E6 /* Pods-SportActivity-SportActivityUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportActivity-SportActivityUITests.debug.xcconfig"; path = "Target Support Files/Pods-SportActivity-SportActivityUITests/Pods-SportActivity-SportActivityUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8543AC3D25222CE3007DAEB3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8543AC6425264714007DAEB3 /* LocationRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRealmModel.swift; sourceTree = "<group>"; };
+		8543AC6A25264872007DAEB3 /* LocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepository.swift; sourceTree = "<group>"; };
+		8543AC6F2527507C007DAEB3 /* RouteStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStatus.swift; sourceTree = "<group>"; };
 		85DED1E02522200F0088039F /* SportActivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportActivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85DED1E32522200F0088039F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85DED1E52522200F0088039F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +112,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8543AC6925264846007DAEB3 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				8543AC6425264714007DAEB3 /* LocationRealmModel.swift */,
+				8543AC6A25264872007DAEB3 /* LocationRepository.swift */,
+				8543AC6F2527507C007DAEB3 /* RouteStatus.swift */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
 		85DED1D72522200F0088039F = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +147,7 @@
 		85DED1E22522200F0088039F /* SportActivity */ = {
 			isa = PBXGroup;
 			children = (
+				8543AC6925264846007DAEB3 /* DataBase */,
 				85DED1E32522200F0088039F /* AppDelegate.swift */,
 				85DED1E52522200F0088039F /* SceneDelegate.swift */,
 				85DED1E72522200F0088039F /* ViewController.swift */,
@@ -183,6 +200,7 @@
 				85DED1DD2522200F0088039F /* Frameworks */,
 				85DED1DE2522200F0088039F /* Resources */,
 				99CA8FDCA9B11ADAE0023494 /* [CP] Copy Pods Resources */,
+				B5B068B8D0C8830651897FAE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -221,6 +239,7 @@
 				85DED1FE252220100088039F /* Frameworks */,
 				85DED1FF252220100088039F /* Resources */,
 				73A93EB15446FC84FCA228E0 /* [CP] Copy Pods Resources */,
+				8F6EC22C10FF5F4694AC6005 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -363,6 +382,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SportActivity-SportActivityUITests/Pods-SportActivity-SportActivityUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8F6EC22C10FF5F4694AC6005 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SportActivity-SportActivityUITests/Pods-SportActivity-SportActivityUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SportActivity-SportActivityUITests/Pods-SportActivity-SportActivityUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SportActivity-SportActivityUITests/Pods-SportActivity-SportActivityUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		99CA8FDCA9B11ADAE0023494 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -378,6 +414,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SportActivity/Pods-SportActivity-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5B068B8D0C8830651897FAE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SportActivity/Pods-SportActivity-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SportActivity/Pods-SportActivity-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SportActivity/Pods-SportActivity-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E1EE9AF2187B36CF5A3D0793 /* [CP] Check Pods Manifest.lock */ = {
@@ -409,9 +462,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8543AC6B25264872007DAEB3 /* LocationRepository.swift in Sources */,
+				8543AC702527507C007DAEB3 /* RouteStatus.swift in Sources */,
 				85DED1E82522200F0088039F /* ViewController.swift in Sources */,
 				85DED1E42522200F0088039F /* AppDelegate.swift in Sources */,
 				85DED1E62522200F0088039F /* SceneDelegate.swift in Sources */,
+				8543AC6525264714007DAEB3 /* LocationRealmModel.swift in Sources */,
 				8543AC3E25222CE3007DAEB3 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

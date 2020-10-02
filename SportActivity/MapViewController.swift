@@ -17,6 +17,11 @@ class MapViewController: UIViewController {
     var tappedCoordinate: CLLocationCoordinate2D?
     var locationManager: CLLocationManager?
     var geocoder = CLGeocoder()
+    var status: RouteStatus = .free
+    var route: GMSPolyline?
+    var routePath: GMSMutablePath?
+    var realmRoute = LocationRealmModel()
+    var database = LocationRepository()
     
     @IBOutlet weak var mapView: GMSMapView!
 
@@ -28,6 +33,7 @@ class MapViewController: UIViewController {
 
         configurateLocationManager()
         configurateMap()
+        configurateRouteDrawer()
      
         
     }
@@ -44,12 +50,27 @@ class MapViewController: UIViewController {
     }
     
     func configurateLocationManager() {
+       
+        
         
         locationManager = CLLocationManager()
-        locationManager?.requestWhenInUseAuthorization()
         locationManager?.delegate = self
+        locationManager?.allowsBackgroundLocationUpdates = true
+        locationManager?.pausesLocationUpdatesAutomatically = false
+        locationManager?.requestAlwaysAuthorization()
+        locationManager?.startMonitoringSignificantLocationChanges()
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
         locationManager?.startUpdatingLocation()
         
+    }
+    
+    func configurateRouteDrawer() {
+        route?.map = nil
+        route = GMSPolyline()
+        routePath = GMSMutablePath()
+        route?.map = mapView
+        route?.strokeWidth = 4
+        route?.strokeColor = .systemBlue
     }
     
     func setMarker(position: CLLocationCoordinate2D) {
@@ -63,7 +84,14 @@ class MapViewController: UIViewController {
         marker = nil
     }
     
-
+    func getLastRoute() {
+        do{
+            self.realmRoute = try database.getLastRoute(route: realmRoute)
+        } catch{
+            print(error)
+        }
+        
+    }
 
     @IBAction func backButton(_ sender: UIBarButtonItem) {
         
@@ -71,6 +99,20 @@ class MapViewController: UIViewController {
     }
     
  
+    @IBAction func lastRouteButton(_ sender: Any) {
+        status = .show
+        
+    }
+    
+    @IBAction func startRecordingRoute(_ sender: Any) {
+        status = .save
+        
+    }
+    
+    
+    @IBAction func stopRecordingRoute(_ sender: Any) {
+        status = .stop
+    }
     
     @IBAction func homeButton(_ sender: UIBarButtonItem) {
         mapView.animate(toLocation: coordinate)
@@ -99,17 +141,41 @@ extension MapViewController: CLLocationManagerDelegate {
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
+        guard let location = locations.last else { return }
+        switch status {
+        case .free:
+            routePath?.add(location.coordinate)
+            route?.path = routePath
             mapView.animate(toLocation: location.coordinate)
-            geocoder.reverseGeocodeLocation(location) { (place, error) in
-                if let  error = error {
-                    print(error)
-                }
-                else {
-                    print(place?.first?.location)
-                }
-            }
+        case .save:
+            routePath?.add(location.coordinate)
+            route?.path = routePath
+            mapView.animate(toLocation: location.coordinate)
+            database.saveRoute(route: realmRoute)
+            route?.strokeColor = .systemRed
+            database.addRoutePoint(route: realmRoute, location: location.coordinate)
+        case .stop:
+            routePath?.add(location.coordinate)
+            route?.path = routePath
+            mapView.animate(toLocation: location.coordinate)
+            database.saveRoute(route: realmRoute)
+            route?.strokeColor = .systemBlue
+        case .show:
+            getLastRoute()
+            mapView.animate(toLocation: realmRoute.coordinate.first?.coordinate ?? location.coordinate)
+            routePath?.add(realmRoute.coordinate.first?.coordinate ?? location.coordinate)
+            route?.path = routePath
+            route?.strokeColor = .cyan
+            
+
         }
+      
+        
+        
+       
+        
+        
+
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
