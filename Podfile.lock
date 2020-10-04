@@ -4,31 +4,35 @@ PODS:
   - GoogleMaps/Base (3.10.0)
   - GoogleMaps/Maps (3.10.0):
     - GoogleMaps/Base
-  - PinLayout (1.8.13)
-  - Realm (4.3.2):
-    - Realm/Headers (= 4.3.2)
-  - Realm/Headers (4.3.2)
-  - RealmSwift (4.3.2):
-    - Realm (= 4.3.2)
+  - KeychainSwift (19.0.0)
+  - PinLayout (1.9.2)
+  - Realm (5.4.7):
+    - Realm/Headers (= 5.4.7)
+  - Realm/Headers (5.4.7)
+  - RealmSwift (5.4.7):
+    - Realm (= 5.4.7)
 
 DEPENDENCIES:
   - GoogleMaps
+  - KeychainSwift
   - PinLayout
   - RealmSwift
 
 SPEC REPOS:
   trunk:
     - GoogleMaps
+    - KeychainSwift
     - PinLayout
     - Realm
     - RealmSwift
 
 SPEC CHECKSUMS:
   GoogleMaps: 8c080862ff2748ece9929471b30feb56a6c5079d
-  PinLayout: e41a50260a76508b7a7fcee8955c76639adc69bc
-  Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
-  RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
+  KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
+  PinLayout: 0d96022e46e8b80468d819f182a393b97ca038da
+  Realm: 4bfc08e376b2e30c84ec3200ebe715574da05cc0
+  RealmSwift: ed40f371b62e8677141939e05b44a0c1a0a2d965
 
-PODFILE CHECKSUM: b3feefdc62d1797c80335d03f896a7b607f2442c
+PODFILE CHECKSUM: 7d2504507ddd62c9829e34035b4cc7dc53cd3b13
 
 COCOAPODS: 1.8.4

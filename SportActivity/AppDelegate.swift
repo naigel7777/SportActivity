@@ -19,9 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyDPxr6KczXAShyJUCQOPlBYrIjQoCnX8is")
         
         
-        let config = Realm.Configuration(schemaVersion: 1)
+        let config = Realm.Configuration(schemaVersion: 2)
          print(NSTemporaryDirectory())
         Realm.Configuration.defaultConfiguration = config
+        
         return true
     }
 

@@ -12,6 +12,9 @@
 		8543AC6525264714007DAEB3 /* LocationRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543AC6425264714007DAEB3 /* LocationRealmModel.swift */; };
 		8543AC6B25264872007DAEB3 /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543AC6A25264872007DAEB3 /* LocationRepository.swift */; };
 		8543AC702527507C007DAEB3 /* RouteStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543AC6F2527507C007DAEB3 /* RouteStatus.swift */; };
+		8543AC8D2529BF54007DAEB3 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543AC8C2529BF54007DAEB3 /* LoginModel.swift */; };
+		8543AC922529C03D007DAEB3 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543AC912529C03D007DAEB3 /* LoginRepository.swift */; };
+		8543AC9D2529DDEE007DAEB3 /* RegistationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543AC9C2529DDEE007DAEB3 /* RegistationViewController.swift */; };
 		85DED1E42522200F0088039F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DED1E32522200F0088039F /* AppDelegate.swift */; };
 		85DED1E62522200F0088039F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DED1E52522200F0088039F /* SceneDelegate.swift */; };
 		85DED1E82522200F0088039F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DED1E72522200F0088039F /* ViewController.swift */; };
@@ -50,6 +53,9 @@
 		8543AC6425264714007DAEB3 /* LocationRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRealmModel.swift; sourceTree = "<group>"; };
 		8543AC6A25264872007DAEB3 /* LocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepository.swift; sourceTree = "<group>"; };
 		8543AC6F2527507C007DAEB3 /* RouteStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStatus.swift; sourceTree = "<group>"; };
+		8543AC8C2529BF54007DAEB3 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		8543AC912529C03D007DAEB3 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		8543AC9C2529DDEE007DAEB3 /* RegistationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistationViewController.swift; sourceTree = "<group>"; };
 		85DED1E02522200F0088039F /* SportActivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportActivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85DED1E32522200F0088039F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85DED1E52522200F0088039F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,11 +121,55 @@
 		8543AC6925264846007DAEB3 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
+				8543AC8B2529BF38007DAEB3 /* login */,
+				8543AC8A2529BF1A007DAEB3 /* location */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		8543AC8A2529BF1A007DAEB3 /* location */ = {
+			isa = PBXGroup;
+			children = (
 				8543AC6425264714007DAEB3 /* LocationRealmModel.swift */,
 				8543AC6A25264872007DAEB3 /* LocationRepository.swift */,
 				8543AC6F2527507C007DAEB3 /* RouteStatus.swift */,
 			);
-			path = DataBase;
+			path = location;
+			sourceTree = "<group>";
+		};
+		8543AC8B2529BF38007DAEB3 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				8543AC8C2529BF54007DAEB3 /* LoginModel.swift */,
+				8543AC912529C03D007DAEB3 /* LoginRepository.swift */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		8543AC962529CFEC007DAEB3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8543AC982529D00E007DAEB3 /* Map */,
+				8543AC972529D005007DAEB3 /* Login */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8543AC972529D005007DAEB3 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				85DED1E72522200F0088039F /* ViewController.swift */,
+				8543AC9C2529DDEE007DAEB3 /* RegistationViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		8543AC982529D00E007DAEB3 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				8543AC3D25222CE3007DAEB3 /* MapViewController.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		85DED1D72522200F0088039F = {
@@ -147,15 +197,14 @@
 		85DED1E22522200F0088039F /* SportActivity */ = {
 			isa = PBXGroup;
 			children = (
+				8543AC962529CFEC007DAEB3 /* Views */,
 				8543AC6925264846007DAEB3 /* DataBase */,
 				85DED1E32522200F0088039F /* AppDelegate.swift */,
 				85DED1E52522200F0088039F /* SceneDelegate.swift */,
-				85DED1E72522200F0088039F /* ViewController.swift */,
 				85DED1E92522200F0088039F /* Main.storyboard */,
 				85DED1EC252220100088039F /* Assets.xcassets */,
 				85DED1EE252220100088039F /* LaunchScreen.storyboard */,
 				85DED1F1252220100088039F /* Info.plist */,
-				8543AC3D25222CE3007DAEB3 /* MapViewController.swift */,
 			);
 			path = SportActivity;
 			sourceTree = "<group>";
@@ -467,8 +516,11 @@
 				85DED1E82522200F0088039F /* ViewController.swift in Sources */,
 				85DED1E42522200F0088039F /* AppDelegate.swift in Sources */,
 				85DED1E62522200F0088039F /* SceneDelegate.swift in Sources */,
+				8543AC8D2529BF54007DAEB3 /* LoginModel.swift in Sources */,
 				8543AC6525264714007DAEB3 /* LocationRealmModel.swift in Sources */,
 				8543AC3E25222CE3007DAEB3 /* MapViewController.swift in Sources */,
+				8543AC9D2529DDEE007DAEB3 /* RegistationViewController.swift in Sources */,
+				8543AC922529C03D007DAEB3 /* LoginRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
