@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class RegistationViewController: UIViewController {
     
@@ -18,6 +19,7 @@ class RegistationViewController: UIViewController {
     @IBOutlet weak var secondFieldPassword: UITextField!
     
     var database = LoginRepository()
+    let keychain = KeychainSwift()
     
     // MARK: Init
     override func viewDidLoad() {
@@ -31,12 +33,13 @@ class RegistationViewController: UIViewController {
     
     
     @IBAction func registratuinButton(_ sender: Any) {
-        if fieldLogin != nil  {
+        if fieldLogin != nil  && fieldPassword != nil {
             if fieldPassword.text == secondFieldPassword.text {
                 if database.checkUser(log: fieldLogin.text ?? "") {
                     showDoubleLoginError()
                 } else {
                     database.saveUser(login: fieldLogin.text ?? "nothing", pass: fieldPassword.text ?? "noPassword")
+                    keychain.set(fieldPassword.text ?? "", forKey: fieldLogin.text ?? "")
                     performSegue(withIdentifier: "goToLogin", sender: self)
                     
                 }

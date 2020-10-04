@@ -184,7 +184,7 @@
                                                             <constraint firstAttribute="height" constant="40" id="z7U-Dw-cds"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -296,7 +296,6 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                 </state>
                                 <connections>
-                                    <action selector="setPositionButton:" destination="J9g-HH-aqt" eventType="touchUpInside" id="G3x-cQ-nap"/>
                                     <action selector="stopRecordingRoute:" destination="J9g-HH-aqt" eventType="touchUpInside" id="BBk-gC-KfG"/>
                                 </connections>
                             </button>
@@ -333,7 +332,7 @@
                                 <action selector="backButton:" destination="J9g-HH-aqt" id="fhp-IT-8eF"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Home" image="location" catalog="system" id="XeI-ty-Qb7">
+                        <barButtonItem key="rightBarButtonItem" title="Home" image="flag.fill" catalog="system" id="XeI-ty-Qb7">
                             <connections>
                                 <action selector="homeButton:" destination="J9g-HH-aqt" id="Nj9-3b-m98"/>
                             </connections>
@@ -353,7 +352,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="location" catalog="system" width="128" height="121"/>
+        <image name="flag.fill" catalog="system" width="128" height="121"/>
         <image name="location.fill" catalog="system" width="128" height="121"/>
         <image name="location.slash.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">

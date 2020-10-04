@@ -15,6 +15,9 @@
 		8543AC8D2529BF54007DAEB3 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543AC8C2529BF54007DAEB3 /* LoginModel.swift */; };
 		8543AC922529C03D007DAEB3 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543AC912529C03D007DAEB3 /* LoginRepository.swift */; };
 		8543AC9D2529DDEE007DAEB3 /* RegistationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543AC9C2529DDEE007DAEB3 /* RegistationViewController.swift */; };
+		8543ACA3252A53E2007DAEB3 /* PrivacyProtectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543ACA2252A53E2007DAEB3 /* PrivacyProtectionViewController.swift */; };
+		8543ACA8252A5405007DAEB3 /* privateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543ACA7252A5405007DAEB3 /* privateView.swift */; };
+		8543ACAE252A55D6007DAEB3 /* View+Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543ACAD252A55D6007DAEB3 /* View+Pin.swift */; };
 		85DED1E42522200F0088039F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DED1E32522200F0088039F /* AppDelegate.swift */; };
 		85DED1E62522200F0088039F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DED1E52522200F0088039F /* SceneDelegate.swift */; };
 		85DED1E82522200F0088039F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DED1E72522200F0088039F /* ViewController.swift */; };
@@ -56,6 +59,9 @@
 		8543AC8C2529BF54007DAEB3 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		8543AC912529C03D007DAEB3 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
 		8543AC9C2529DDEE007DAEB3 /* RegistationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistationViewController.swift; sourceTree = "<group>"; };
+		8543ACA2252A53E2007DAEB3 /* PrivacyProtectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyProtectionViewController.swift; sourceTree = "<group>"; };
+		8543ACA7252A5405007DAEB3 /* privateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = privateView.swift; sourceTree = "<group>"; };
+		8543ACAD252A55D6007DAEB3 /* View+Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Pin.swift"; sourceTree = "<group>"; };
 		85DED1E02522200F0088039F /* SportActivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportActivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85DED1E32522200F0088039F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85DED1E52522200F0088039F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +155,7 @@
 		8543AC962529CFEC007DAEB3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8543ACA1252A53B4007DAEB3 /* Private */,
 				8543AC982529D00E007DAEB3 /* Map */,
 				8543AC972529D005007DAEB3 /* Login */,
 			);
@@ -170,6 +177,23 @@
 				8543AC3D25222CE3007DAEB3 /* MapViewController.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		8543ACA1252A53B4007DAEB3 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				8543ACA2252A53E2007DAEB3 /* PrivacyProtectionViewController.swift */,
+				8543ACA7252A5405007DAEB3 /* privateView.swift */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		8543ACAC252A55BA007DAEB3 /* EXT */ = {
+			isa = PBXGroup;
+			children = (
+				8543ACAD252A55D6007DAEB3 /* View+Pin.swift */,
+			);
+			path = EXT;
 			sourceTree = "<group>";
 		};
 		85DED1D72522200F0088039F = {
@@ -197,6 +221,7 @@
 		85DED1E22522200F0088039F /* SportActivity */ = {
 			isa = PBXGroup;
 			children = (
+				8543ACAC252A55BA007DAEB3 /* EXT */,
 				8543AC962529CFEC007DAEB3 /* Views */,
 				8543AC6925264846007DAEB3 /* DataBase */,
 				85DED1E32522200F0088039F /* AppDelegate.swift */,
@@ -514,8 +539,11 @@
 				8543AC6B25264872007DAEB3 /* LocationRepository.swift in Sources */,
 				8543AC702527507C007DAEB3 /* RouteStatus.swift in Sources */,
 				85DED1E82522200F0088039F /* ViewController.swift in Sources */,
+				8543ACAE252A55D6007DAEB3 /* View+Pin.swift in Sources */,
 				85DED1E42522200F0088039F /* AppDelegate.swift in Sources */,
+				8543ACA3252A53E2007DAEB3 /* PrivacyProtectionViewController.swift in Sources */,
 				85DED1E62522200F0088039F /* SceneDelegate.swift in Sources */,
+				8543ACA8252A5405007DAEB3 /* privateView.swift in Sources */,
 				8543AC8D2529BF54007DAEB3 /* LoginModel.swift in Sources */,
 				8543AC6525264714007DAEB3 /* LocationRealmModel.swift in Sources */,
 				8543AC3E25222CE3007DAEB3 /* MapViewController.swift in Sources */,

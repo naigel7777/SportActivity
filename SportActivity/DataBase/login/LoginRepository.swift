@@ -14,8 +14,7 @@ class LoginRepository {
         
         do {
             let realm = try Realm()
-            print(realm.configuration.fileURL)
-            print(realm.configuration.encryptionKey)
+
             let newUser = LoginModel()
             newUser.login = login
             newUser.password = pass

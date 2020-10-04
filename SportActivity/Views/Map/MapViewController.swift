@@ -12,7 +12,7 @@ import CoreLocation
 class MapViewController: UIViewController {
     
     //MARK: Properties
-    let coordinate = CLLocationCoordinate2D(latitude: 55.753215, longitude: 37.622504)
+    var coordinate = CLLocationCoordinate2D(latitude: 55.753215, longitude: 37.622504)
     var marker: GMSMarker?
     var tappedCoordinate: CLLocationCoordinate2D?
     var locationManager: CLLocationManager?
@@ -115,14 +115,11 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func homeButton(_ sender: UIBarButtonItem) {
-        mapView.animate(toLocation: coordinate)
+        removeMarker()
+        setMarker(position: tappedCoordinate ?? coordinate)
         
     }
     
-    @IBAction func setPositionButton(_ sender: UIButton) {
-        removeMarker()
-        setMarker(position: tappedCoordinate ?? coordinate)
-    }
     
 
 }
@@ -147,9 +144,11 @@ extension MapViewController: CLLocationManagerDelegate {
             routePath?.add(location.coordinate)
             route?.path = routePath
             mapView.animate(toLocation: location.coordinate)
+            self.coordinate = location.coordinate
         case .save:
             routePath?.add(location.coordinate)
             route?.path = routePath
+            self.coordinate = location.coordinate
             mapView.animate(toLocation: location.coordinate)
             database.saveRoute(route: realmRoute)
             route?.strokeColor = .systemRed
@@ -157,6 +156,7 @@ extension MapViewController: CLLocationManagerDelegate {
         case .stop:
             routePath?.add(location.coordinate)
             route?.path = routePath
+            self.coordinate = location.coordinate
             mapView.animate(toLocation: location.coordinate)
             database.saveRoute(route: realmRoute)
             route?.strokeColor = .systemBlue
