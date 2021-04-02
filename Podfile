@@ -7,6 +7,13 @@ target 'SportActivity' do
 
   # Pods for SportActivity
 
+
+pod 'GoogleMaps'
+pod 'RealmSwift'
+pod 'PinLayout'
+pod 'KeychainSwift'
+
+
   target 'SportActivityTests' do
     inherit! :search_paths
     # Pods for testing

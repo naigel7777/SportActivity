@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import GoogleMaps
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,7 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        GMSServices.provideAPIKey("AIzaSyDPxr6KczXAShyJUCQOPlBYrIjQoCnX8is")
+        
+        
+        let config = Realm.Configuration(schemaVersion: 2)
+         print(NSTemporaryDirectory())
+        Realm.Configuration.defaultConfiguration = config
+        
         return true
     }
 
